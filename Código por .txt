@@ -1,0 +1,58 @@
+-------------------- Primeira Parte --------------------
+
+main.py
+
+import conversor
+
+origem = input("Unidade de origem: ").lower()
+valor = float(input("Valor: "))
+destino = input("Unidade de destino: ").lower()
+
+if origem == "pé" and destino == "metro":
+    resultado = conversor.pe_para_metro(valor)
+
+elif origem == "metro" and destino == "pé":
+    resultado = conversor.metro_para_pe(valor)
+
+elif origem == "jarda" and destino == "metro":
+    resultado = conversor.jarda_para_metro(valor)
+
+elif origem == "metro" and destino == "jarda":
+    resultado = conversor.metro_para_jarda(valor)
+
+elif origem == "jarda" and destino == "pé":
+    resultado = conversor.jarda_para_pe(valor)
+
+elif origem == "pé" and destino == "jarda":
+    resultado = conversor.pe_para_jarda(valor)
+
+else:
+    print("Conversão não disponível.")
+    resultado = None
+
+if resultado is not None:
+    print("Saída:", resultado)
+
+-------------------- Segunda Parte --------------------
+
+conversor.py
+
+# Definindo funções de conversão
+
+def pe_para_metro(pe):
+    return pe * 0.3048
+
+def metro_para_pe(metro):
+    return metro * 3.28084
+
+def jarda_para_metro(jarda):
+    return jarda * 0.9144
+
+def metro_para_jarda(metro):
+    return metro / 0.9144
+
+def jarda_para_pe(jarda):
+    return jarda * 3
+
+def pe_para_jarda(pe):
+    return pe / 3
